@@ -1,0 +1,89 @@
+<div class="cards__card ng-scope" ng-repeat="card in $ctrl.parsedCards track by card.id">
+    <card class="ng-isolate-scope" data-card="card" embedded="$ctrl.embedded" index="$index">
+        <a analytics-click="search_result_click" analytics-click-position="2" class="ot-card" data-card-type="100" href="https://asunnot.oikotie.fi/myytavat-asunnot/tampere/14852747"
+            ng-attr-target="{{::$ctrl.embedded || 0 === 1 ? '_blank' : '_self'}}" ng-href="https://asunnot.oikotie.fi/myytavat-asunnot/tampere/14852747"
+            target="_self">
+            <div class="ot-card__header">
+                <div class="ot-card__address">
+                    <div class="ot-card__street ng-binding" ng-bind="$ctrl.card.building.address">Hakkarinkaari 3</div>
+                    <div class="ot-card__text ot-card__text--secondary ot-card__area">
+                        <!-- ngIf: $ctrl.card.building.district --><span class="ot-card__text ng-binding ng-scope"
+                            ng-bind="$ctrl.card.building.district" ng-if="$ctrl.card.building.district">Haapalinnankylä</span><!-- end ngIf: $ctrl.card.building.district -->
+                        <!-- ngIf: $ctrl.card.building.city --><span class="ot-card__text ot-card__text--concat ng-binding ng-scope"
+                            ng-bind="$ctrl.card.building.city" ng-if="$ctrl.card.building.city">Tampere</span><!-- end ngIf: $ctrl.card.building.city -->
+                    </div>
+                </div>
+                <!-- ngIf: ::!$ctrl.card.settings -->
+                <div class="ot-card__favourite hidden--embedded ng-scope" ng-if="::!$ctrl.card.settings">
+                    <favourite-icon card-id="14852747" class="ng-isolate-scope">
+                        <button analytics-click="favourite_click_add" class="favourite favourite--icon" ng-class="$ctrl.css"
+                            ng-click="$ctrl.toggleFavourite($event)" ng-disabled="$ctrl.busy">
+                            <span class="favourite__icon favourite__icon--unfavourited" ng-class="{
+                'favourite__icon--favourited' : $ctrl.isFavourite,
+                'favourite__icon--unfavourited' : !$ctrl.isFavourite
+            }"
+                                ng-disabled="$ctrl.busy">
+                                <i class="icon-OT5 icon-OT5--heart-o" ng-class="$ctrl.isFavourite ? 'icon-OT5--heart' : 'icon-OT5--heart-o'"></i>
+                            </span>
+                        </button>
+                    </favourite-icon>
+                </div><!-- end ngIf: ::!$ctrl.card.settings -->
+                <!-- ngIf: ::$ctrl.card.settings -->
+            </div>
+            <div class="ot-card__image-wrapper">
+                <div aria-label="Kohdekuva" class="ot-card__image" data-background-image="https://cdn.asunnot.oikotie.fi/zjT1_5YxXhLiXTppqOKuFCrcnvY=/full-fit-in/623x464/filters:watermark(https://cdn.asunnot.oikotie.fi/FNgYc0cxRts1I9PguvqoW4Bqtrw=/static.asunnot.oikotie.fi/oikotie_watermark.png,0,-1,1):background_color(white):format(jpeg)/ot-real-estate-mediabank-prod/163/050/source/183050361"
+                    data-loaded="true" lazy-load="" role="img" style='background-image: url("https://cdn.asunnot.oikotie.fi/zjT1_5YxXhLiXTppqOKuFCrcnvY=/full-fit-in/623x464/filters:watermark(https://cdn.asunnot.oikotie.fi/FNgYc0cxRts1I9PguvqoW4Bqtrw=/static.asunnot.oikotie.fi/oikotie_watermark.png,0,-1,1):background_color(white):format(jpeg)/ot-real-estate-mediabank-prod/163/050/source/183050361");'></div>
+                <div class="ot-card__info-tag-wrapper ot-card__info-tag-wrapper--top">
+                    <!-- ngIf: $ctrl.card.nextViewing -->
+                    <div class="ot-card__info-tag ng-scope" ng-if="$ctrl.card.nextViewing">
+                        <span>Esittely</span>:
+                        <!-- ngIf: $ctrl.card.nextViewing.isToday -->
+                        <!-- ngIf: $ctrl.card.nextViewing.isTomorrow -->
+                        <!-- ngIf: !$ctrl.card.nextViewing.isToday && !$ctrl.card.nextViewing.isTomorrow --><span class="ng-binding ng-scope"
+                            ng-bind="$ctrl.card.nextViewing.date | date:'d.M.'" ng-if="!$ctrl.card.nextViewing.isToday &amp;&amp; !$ctrl.card.nextViewing.isTomorrow">10.1.</span><!-- end ngIf: !$ctrl.card.nextViewing.isToday && !$ctrl.card.nextViewing.isTomorrow -->
+                    </div><!-- end ngIf: $ctrl.card.nextViewing -->
+                </div>
+                <div class="ot-card__info-tag-wrapper ot-card__info-tag-wrapper--bottom">
+                    <!-- ngIf: $ctrl.card.status === 2 -->
+                    <!-- ngIf: $ctrl.card.isRecent -->
+                    <div class="ot-card__info-tag ot-card__info-tag--recent ng-scope" ng-if="$ctrl.card.isRecent">Uusi</div><!-- end ngIf: $ctrl.card.isRecent -->
+                    <!-- ngIf: $ctrl.card.priceChanged -->
+                </div>
+                <!-- ngIf: $ctrl.card.brand.image --><img alt="Yrityslogo" class="ot-card__img-brand ng-scope" ng-if="$ctrl.card.brand.image"
+                    ng-src="https://cdn.asunnot.oikotie.fi/B4W8C9-pr9Rxy_7-M9H74C-m6F4=/fit-in/320x260/filters:background_color(white):format(jpeg)/ot-real-estate-mediabank-prod/221/123/source/121321122.jpg"
+                    src="https://cdn.asunnot.oikotie.fi/B4W8C9-pr9Rxy_7-M9H74C-m6F4=/fit-in/320x260/filters:background_color(white):format(jpeg)/ot-real-estate-mediabank-prod/221/123/source/121321122.jpg" /><!-- end ngIf: $ctrl.card.brand.image -->
+            </div>
+            <div class="ot-card__body">
+                <section class="ot-card__text ot-card__price-size ot-card__section">
+                    <span class="ot-card__text ot-card__price">
+                        <!-- ngIf: $ctrl.card.onlineOffer -->
+                        <!-- ngIf: $ctrl.card.price --><span class="ng-binding ng-scope" ng-bind="$ctrl.card.price"
+                            ng-if="$ctrl.card.price">133 000 €</span><!-- end ngIf: $ctrl.card.price --></span>
+                    <!-- ngIf: !$ctrl.card.price -->
+                    <!-- ngIf: $ctrl.card.size --><span class="ot-card__text ot-card__size ng-binding ng-scope" ng-bind="$ctrl.card.size"
+                        ng-if="$ctrl.card.size">38 m²</span><!-- end ngIf: $ctrl.card.size -->
+                    <!-- ngIf: $ctrl.card.sizeFlexible -->
+                </section>
+                <!-- ngIf: $ctrl.card.roomConfiguration -->
+                <section class="ot-card__section ng-scope" ng-if="$ctrl.card.roomConfiguration">
+                    <div class="ot-card__text ng-binding" ng-bind="$ctrl.card.roomConfiguration">1h, k, s, p (las)</div>
+                </section><!-- end ngIf: $ctrl.card.roomConfiguration -->
+                <!-- ngIf: $ctrl.card.subType || $ctrl.card.building.year -->
+                <section class="ot-card__section ng-scope" ng-if="$ctrl.card.subType || $ctrl.card.building.year">
+                    <!-- ngIf: $ctrl.card.isNewDevelopment -->
+                    <!--
+    -->
+                    <!-- ngIf: $ctrl.card.subType --><span class="ot-card__text ng-scope" ng-if="$ctrl.card.subType"
+                        translate="constant/building_type/1">Kerrostalo</span><!-- end ngIf: $ctrl.card.subType -->
+                    <!--
+    -->
+                    <!-- ngIf: $ctrl.card.building.year --><span class="ot-card__text ot-card__text--concat ng-binding ng-scope"
+                        ng-bind="$ctrl.card.building.year" ng-if="$ctrl.card.building.year">2003</span><!-- end ngIf: $ctrl.card.building.year -->
+                </section><!-- end ngIf: $ctrl.card.subType || $ctrl.card.building.year -->
+                <div class="ot-card__text--secondary ot-card__description ng-binding" ng-bind-html="$ctrl.card.description">Suositulla
+                    alueella viihtyisä saunallinen pikkukoti v.2003 valmistuneen taloyhtiön 4.kerroksesta. Iso
+                    lasitettu parveke, josta rauhalliset pihanäky</div>
+            </div>
+        </a>
+    </card>
+</div>
