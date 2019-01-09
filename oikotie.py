@@ -49,7 +49,14 @@ for tag in tags:
             house_year = house_info[-1].findAll('span')[0].text 
 
 
-    csv_file.write(f"{street_address}, {distric}, {city}, {house_price}, {house_area}, {house_rooms}, {house_type}, {house_year}\n")
+    csv_file.write(f"{street_address.replace(",",".")}, 
+                     {distric.replace(",",".")}, 
+                     {city.replace(",",".")}, 
+                     {house_price.replace(",",".")}, 
+                     {house_area.replace(",",".")}, 
+                     {house_rooms.replace(",",".")}, 
+                     {house_type.replace(",",".")}, 
+                     {house_year.replace(",",".")}\n")
 
     # print("========")
     # print(street_address)
