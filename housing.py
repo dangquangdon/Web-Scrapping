@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 import requests
 import time
 
+
 # Get the url 
 url = "https://asunnot.oikotie.fi/myytavat-asunnot?pagination=1&cardType=100"
 # Get the browser
@@ -23,7 +24,7 @@ while (match == False):
         match = True
 
 source_data = browser.page_source
-with open("oikotie.html","w") as f:
+with open(f"oikotie.html","w") as f:
     f.write(source_data)
 
 print("Done!")
