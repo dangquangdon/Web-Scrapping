@@ -34,7 +34,10 @@ for container in containers:
     else:
         amount_in_stock = "Out of Stock"
 
-    f.write("{},{},{},{}\n".format(product_name, selling_price, normal_price, amount_in_stock))
+    f.write("{},{},{},{}\n".format(product_name.replace(',','.'), 
+                                    selling_price.replace(',','.'), 
+                                    normal_price, 
+                                    amount_in_stock))
 
 f.close()
 
