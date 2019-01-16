@@ -15,8 +15,10 @@ To install dependencies
 pip install -r requirements.txt
 ```
 
-Install [ChromeDriver](https://chromedriver.storage.googleapis.com/index.html?path=2.45/):
-    - if you have problems on Mac, maybe follow this [tutorial](https://www.kenst.com/2015/03/installing-chromedriver-on-mac-osx/)
+Install [ChromeDriver](https://chromedriver.storage.googleapis.com/index.html?path=2.45/):  
+
+    - if you have problems on Mac, maybe follow this [tutorial](https://www.kenst.com/2015/03/installing-chromedriver-on-mac-osx/)  
+    
     - TODO: test ChromeDriver installation on Windows and Linux
 
 ## How it works:
